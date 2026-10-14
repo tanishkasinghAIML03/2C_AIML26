@@ -1,0 +1,35 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <title>Product Management</title> 
+    </head> 
+    <body> 
+        <h2>Product Information</h2> 
+        <p id="output"></p> 
+
+        <script> 
+            let ABES = { 
+                productid: 188,   
+                productname: "Tanishka", 
+                productprice: 3000, 
+                productquantity: 3, 
+
+                totalcost: function() { 
+                    return this.productprice * this.productquantity; 
+                },
+
+                updateQuantity: function(newquantity) {
+                    this.productquantity = newquantity;
+                },
+displayInfo: function() {
+    let outputelement=document.getElementById("output");
+    outputelement.innerHTML="product id: " +this.productid + "<br>product name: " +this.productname + 
+    "<br>productprice:"+this.productprice + "<br>productquantity:" +this.productquantity +"<br>total cost:"+this.totalcost();
+}
+}
+
+            ABES.updateQuantity(4); 
+            ABES.displayInfo(); 
+        </script> 
+    </body> 
+</html>
